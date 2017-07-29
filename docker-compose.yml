@@ -1,0 +1,16 @@
+version: "3"
+services:   
+  app:
+    image: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    command: -logtostderr=true
+    networks:
+      - appnet
+networks:
+  appnet:
