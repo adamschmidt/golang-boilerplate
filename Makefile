@@ -21,14 +21,14 @@ clean:
 install-build-deps:
 	# go get your app's functional dependencies here...
 	# eg: go get -u golang.org/x/net/context
-	go get -u github.com/golang/glog
+	go get -u github.com/sirupsen/logrus
 
 .PHONY: install
-install: install-build-deps
+install:
 	go install -ldflags $(LD_FLAGS) mydomain.org/app
 
 .PHONY: dist-app
-dist-app: install-build-deps
+dist-app:
 	GOOS=linux GOARCH=amd64 go build -a -o dist/$(APP_NAME) -ldflags $(LD_FLAGS) mydomain.org/app
 
 .PHONY: dist
@@ -61,4 +61,5 @@ install-dev-tools:
 		golang.org/x/tools/cmd/gorename \
 		github.com/cweill/gotests \
 		golang.org/x/tools/cmd/guru \
-		github.com/josharian/impl
+		github.com/josharian/impl \
+		sourcegraph.com/sqs/goreturns

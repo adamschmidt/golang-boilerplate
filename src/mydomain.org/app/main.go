@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	log "github.com/golang/glog"
+	log "github.com/sirupsen/logrus"
 )
 
 var (
@@ -20,7 +20,6 @@ type server struct{}
 
 func main() {
 	flag.Parse()
-	defer log.Flush()
 
 	versionString := fmt.Sprintf("%s version:%s commit:%s timestamp:%s", programName, programVersion, gitCommit, buildTimestamp)
 	if *printVersion {

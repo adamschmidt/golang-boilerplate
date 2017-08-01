@@ -48,5 +48,5 @@ This approach makes use of `make`. A quick peek inside `Makefile`, and you'll se
 # Running
 
 * You can run the app with logging by using `bin/app -logtostderr=true` or `docker run app -logtostderr=true` if you'd like to run the container.
-* The boilerplate code makes use of [glog](https://github.com/golang/glog/). The output can be controlled using the flags outlined in the [documentation](https://github.com/golang/glog/blob/master/glog.go).
+* The boilerplate code makes use of [logrus](https://github.com/sirupsen/logrus/). The output can be controlled using the flags outlined in the [documentation](https://github.com/golang/glog/blob/master/glog.go).
 
